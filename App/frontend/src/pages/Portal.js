@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 
 import Hidden from "@material-ui/core/Hidden";
-import Navbar from "../components/Portal/navbar";
+
 import Sidebar from "../components/Portal/sidebar";
 import Admin from "../components/Portal/admin";
 
@@ -57,7 +57,6 @@ export default function RecruitmentPortal() {
   const classes = useStyles();
   return (
     <div>
-      <Navbar />
       <Sidebar />
       <Admin />
     </div>
