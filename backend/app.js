@@ -20,12 +20,12 @@ app.use(express.json());
 app.use(bodyParser.text());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, "frontend")));
+app.use(express.static(path.join(__dirname, "frontend")));
 app.use(cors());
 
-// app.get('/',function(req,res) {
-//   res.sendFile('index.html');
-// });
+app.get('/',function(req,res) {
+  res.sendFile('index.html');
+});
 
 //
 

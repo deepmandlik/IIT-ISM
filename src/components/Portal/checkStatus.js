@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Instruction() {
+export default function Checkstatus() {
   const classes = useStyles();
 
   return (
     <Box className={classes.root}>
-      <Typography variant="body1">Instructions</Typography>
+      <Typography variant="body1">Check Status</Typography>
     </Box>
   );
 }

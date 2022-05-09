@@ -10,7 +10,6 @@ import Box from "@material-ui/core/Box";
 import Hidden from "@material-ui/core/Hidden";
 
 import Sidebar from "../components/Portal/sidebar";
-import Admin from "../components/Portal/admin";
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -58,7 +57,6 @@ export default function RecruitmentPortal() {
   return (
     <div>
       <Sidebar />
-      <Admin />
     </div>
   );
 }

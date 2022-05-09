@@ -14,13 +14,15 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import DescriptionIcon from '@material-ui/icons/Description';
 import PersonIcon from '@material-ui/icons/Person';
 import DoneAllIcon from '@material-ui/icons/DoneAll';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import Details from "./details";
 import Instruction from "./instruction";
+import FormBuild from "../adminPanel/formbuilder";
+import Checkstatus from "./checkStatus";
+import Userprofile from "./userprofile";
 
 const drawerWidth = 240;
 
@@ -61,8 +63,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     padding: theme.spacing(0, 1),
-    // marginTop : 50,
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
   },
@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Sidebar() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [componenet , setComponenet] = React.useState(<Details />);
+  const [componenet , setComponenet] = React.useState(<Instruction />);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -143,19 +143,19 @@ export default function Sidebar() {
             </ListItemIcon>
             <ListItemText primary="Instructions" style={{color : '#FFF'}} />
           </ListItem>
-          <ListItem button onClick={() => setComponenet(<Details />)}>
+          <ListItem button onClick={() => setComponenet( localStorage.getItem("isAdmin") ? <FormBuild /> : <Details />)}>
             <ListItemIcon>
               <ListAltIcon style={{color : '#FFF'}} />
             </ListItemIcon>
             <ListItemText primary="Application Form" style={{color : '#FFF'}} />
           </ListItem>
-          <ListItem button onClick={() => setComponenet(<Instruction />)} >
+          <ListItem button onClick={() => setComponenet(<Checkstatus />)} >
             <ListItemIcon>
               <DoneAllIcon style={{color : '#FFF'}} />
             </ListItemIcon>
             <ListItemText primary="Check status" style={{color : '#FFF'}} />
           </ListItem>
-          <ListItem button onClick={() => setComponenet(<Details />)}>
+          <ListItem button onClick={() => setComponenet(<Userprofile /> )}>
             <ListItemIcon>
               <PersonIcon style={{color : '#FFF'}} />
             </ListItemIcon>

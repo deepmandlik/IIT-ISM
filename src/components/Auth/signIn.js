@@ -111,6 +111,8 @@ export default function SignIn({ handleClickShowSignUp }) {
           navigate("/portal");
           console.log(data);
           localStorage.setItem("token", data.token.substr(7));
+          localStorage.setItem("isAdmin", data.isAdmin);
+          console.log("isAdmin" , localStorage.getItem("isAdmin"));
         });
     } catch (error) {
       console.log(error);

@@ -122,6 +122,7 @@ export default function SignUp({ setShowLogin }) {
           console.log(data);
           navigate("/portal");
           localStorage.setItem('token', data.token.substr(7));
+          localStorage.setItem("isAdmin", data.isAdmin);
           console.log(localStorage.getItem('token'));
         });
     } catch (error) {
