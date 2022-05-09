@@ -8,13 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import IconButton from "@material-ui/core/IconButton";
-import Visibility from "@material-ui/icons/Visibility";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import Hidden from "@material-ui/core/Hidden";
 import SectionBox from "./section-box";
 import { uniqueId } from "../ID/uniqueId";
 
@@ -38,11 +31,16 @@ export default function FormBuild() {
   const section = useSelector((state) => state.section);
   const dispatch = useDispatch();
 
-  const sectionId = 'section_' + uniqueId() ;
+  const sectionId = "section_" + uniqueId();
 
   useEffect(() => {
     console.log(section);
   }, [section, sectionId]);
+
+  const postRequest = () => {
+    ///Post Request
+    //form object in section variable;
+  };
 
   return (
     <Box className={classes.root}>
@@ -60,13 +58,23 @@ export default function FormBuild() {
         >
           Form builder (heading)
         </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => dispatch(addSection({sectionId : sectionId }))}
-        >
-          Add Section
-        </Button>
+        <Box display="flex">
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => dispatch(addSection({ sectionId: sectionId }))}
+          >
+            Add Section
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            style={{ marginLeft: 10 }}
+            onClick={postRequest}
+          >
+            Save
+          </Button>
+        </Box>
       </Box>
       {section.map((section) => (
         <SectionBox key={section.id} sectionData={section} />

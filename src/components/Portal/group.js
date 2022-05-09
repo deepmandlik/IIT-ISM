@@ -7,15 +7,6 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import IconButton from "@material-ui/core/IconButton";
-import Visibility from "@material-ui/icons/Visibility";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import Hidden from "@material-ui/core/Hidden";
-import Dropdown from "./dropdown";
-import Textfield from "./textfield";
 import Element from "./element";
 
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Group({ data }) {
+export default function Group({ data , sectionId , sectionLabel}) {
   const classes = useStyles();
 
   return (
@@ -51,8 +42,8 @@ export default function Group({ data }) {
           </Box>
           <Box style={{padding : "5px 20px"}}>
 
-          {data.elements.map((data, index) => (
-            <Element element={data} key={index} />
+          {data.element.map((data, index) => (
+            <Element element={data} key={index} sectionId={sectionId} sectionLabel={sectionLabel} />
           ))}
           
           </Box>

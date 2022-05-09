@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: "normal",
     fontSize: 15,
     fontWeight: 400,
-    outline : 'none'
+    outline: "none",
   },
 }));
 export default function ElementType(props) {
@@ -68,11 +68,7 @@ export default function ElementType(props) {
     setValue(event.target.value);
   };
 
-  const elementId = 'element_' + uniqueId() ;
-
-  // useEffect(() => {
-  //   console.log(section);
-  // }, [section]);
+  const elementId = "element_" + uniqueId();
 
   return (
     <Box
@@ -103,10 +99,16 @@ export default function ElementType(props) {
         size="small"
         style={{ border: "1px solid #0005" }}
         onClick={() =>
-          dispatch(addElement({ elementId: elementId ,elementType : value , sectionId: props.sectionId }))
+          dispatch(
+            addElement({
+              elementId: elementId,
+              elementType: value,
+              sectionId: props.sectionId,
+            })
+          )
         }
       >
-     Add element
+        Add element
       </Button>
     </Box>
   );
