@@ -14,15 +14,17 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import DescriptionIcon from '@material-ui/icons/Description';
-import PersonIcon from '@material-ui/icons/Person';
-import DoneAllIcon from '@material-ui/icons/DoneAll';
-import ListAltIcon from '@material-ui/icons/ListAlt';
+import DescriptionIcon from "@material-ui/icons/Description";
+import PersonIcon from "@material-ui/icons/Person";
+import DoneAllIcon from "@material-ui/icons/DoneAll";
+import ListAltIcon from "@material-ui/icons/ListAlt";
 import Details from "./details";
 import Instruction from "./instruction";
 import FormBuild from "../adminPanel/formbuilder";
 import Checkstatus from "./checkStatus";
 import Userprofile from "./userprofile";
+import { Button } from "@material-ui/core";
+import { AccountCircle } from "@material-ui/icons";
 
 const drawerWidth = 240;
 
@@ -57,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    background: "#C62828"
+    background: "#C62828",
   },
   drawerHeader: {
     display: "flex",
@@ -82,12 +84,21 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  signout :  {
+    marginLeft: '55%',
+    [theme.breakpoints.down('md')]: {
+      marginLeft: '37%',
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '20%',
+    },
+  }
 }));
 
-export default function Sidebar() {
+export default function Sidebar({ signOut }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [componenet , setComponenet] = React.useState(<Instruction />);
+  const [componenet, setComponenet] = React.useState(<Instruction />);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -119,6 +130,14 @@ export default function Sidebar() {
           <Typography variant="h6">
             RECRUITMENT PORTAL IIT(ISM) DHANBAD
           </Typography>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.signout}
+            onClick={signOut}
+          >
+            Sign out
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -132,34 +151,44 @@ export default function Sidebar() {
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
-            <ChevronLeftIcon style={{color : '#FFF'}} />
+            <ChevronLeftIcon style={{ color: "#FFF" }} />
           </IconButton>
         </div>
         <Divider />
         <List>
-          <ListItem button onClick={() => setComponenet(<Instruction />)} >
-            <ListItemIcon >
-              <DescriptionIcon style={{color : '#FFF'}} />
-            </ListItemIcon>
-            <ListItemText primary="Instructions" style={{color : '#FFF'}} />
-          </ListItem>
-          <ListItem button onClick={() => setComponenet( localStorage.getItem("isAdmin") ? <FormBuild /> : <Details />)}>
+          <ListItem button onClick={() => setComponenet(<Instruction />)}>
             <ListItemIcon>
-              <ListAltIcon style={{color : '#FFF'}} />
+              <DescriptionIcon style={{ color: "#FFF" }} />
             </ListItemIcon>
-            <ListItemText primary="Application Form" style={{color : '#FFF'}} />
+            <ListItemText primary="Instructions" style={{ color: "#FFF" }} />
           </ListItem>
-          <ListItem button onClick={() => setComponenet(<Checkstatus />)} >
+          <ListItem
+            button
+            onClick={() =>
+              setComponenet(
+                localStorage.getItem("isAdmin") === 'true' ? <FormBuild /> : <Details />
+              )
+            }
+          >
             <ListItemIcon>
-              <DoneAllIcon style={{color : '#FFF'}} />
+              <ListAltIcon style={{ color: "#FFF" }} />
             </ListItemIcon>
-            <ListItemText primary="Check status" style={{color : '#FFF'}} />
+            <ListItemText
+              primary="Application Form"
+              style={{ color: "#FFF" }}
+            />
           </ListItem>
-          <ListItem button onClick={() => setComponenet(<Userprofile /> )}>
+          <ListItem button onClick={() => setComponenet(<Checkstatus />)}>
             <ListItemIcon>
-              <PersonIcon style={{color : '#FFF'}} />
+              <DoneAllIcon style={{ color: "#FFF" }} />
             </ListItemIcon>
-            <ListItemText primary="User Profile" style={{color : '#FFF'}} />
+            <ListItemText primary="Check status" style={{ color: "#FFF" }} />
+          </ListItem>
+          <ListItem button onClick={() => setComponenet(<Userprofile />)}>
+            <ListItemIcon>
+              <PersonIcon style={{ color: "#FFF" }} />
+            </ListItemIcon>
+            <ListItemText primary="User Profile" style={{ color: "#FFF" }} />
           </ListItem>
         </List>
       </Drawer>
@@ -168,7 +197,7 @@ export default function Sidebar() {
           [classes.contentShift]: open,
         })}
       >
-        <div className={classes.drawerHeader} style={{marginTop : 50 }}>
+        <div className={classes.drawerHeader} style={{ marginTop: 50 }}>
           {componenet}
         </div>
       </main>

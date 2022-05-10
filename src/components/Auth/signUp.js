@@ -124,6 +124,7 @@ export default function SignUp({ setShowLogin }) {
           localStorage.setItem('token', data.token.substr(7));
           localStorage.setItem("isAdmin", data.isAdmin);
           console.log(localStorage.getItem('token'));
+          console.log("isAdmin" , localStorage.getItem("isAdmin"));
         });
     } catch (error) {
       console.log(error);

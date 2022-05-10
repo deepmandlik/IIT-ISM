@@ -10,6 +10,7 @@ import Box from "@material-ui/core/Box";
 import { useSelector } from "react-redux";
 import Section from "./section";
 import { Button } from "@material-ui/core";
+import { Data } from "./Data";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -58,26 +59,29 @@ export default function Details() {
   //comment this section
   //const sections = useSelector((state) => state.section);
   const storage = useSelector((state) => state.storage);
-  const [sections , setSections] = useState();
+  const [sections , setSections] = useState(Data);
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    console.log(value);
   };
 
   const handleChangeIndex = (index) => {
     setValue(index);
+    console.log(index);
   };
 
   ///Get request
   useEffect(() => {
-    //only called once
-      // get request from database
+      //useEffect only called once
+      //get request from database
       //setSection(data) store data in sections from database
+      //store new data in setSection
   }, []);
 
   const postRequest = () => {
-    //post object from storage redux file...
+    //post object from storage redux file to database...
     console.log(storage)
 
   }

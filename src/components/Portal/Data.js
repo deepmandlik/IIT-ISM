@@ -1,216 +1,148 @@
-export const sections = [
-  {
-    label: "Personal Information",
-    elements: [
-      {
-        element: "Data",
-        label: "Salutation",
-        child: [
-          {
-            type: "dropdown",
-            values: ["Mr", "Mrs", "Miss", "Dr"],
-          },
-        ],
-      },
-      {
-        element: "Data",
-        label: "Name",
-        child: [
-          {
-            type: "text",
-            label: "first",
-            size: 250,
-          },
-          {
-            type: "text",
-            label: "middle",
-            size: 250,
-          },
-          {
-            type: "text",
-            label: "last",
-            size: 250,
-          },
-        ],
-      },
-      {
-        element: "Data",
-        label: "Mother's Name",
-        child: [
-          {
-            type: "text",
-            label: "Mother's Name",
-            size: 250,
-          },
-        ],
-      },
-      {
-        element: "Data",
-        label: "Father's Name",
-        child: [
-          {
-            type: "text",
-            label: "Father's Name",
-            size: 250,
-          },
-        ],
-      },
 
-      {
-        element: "Data",
-        label: "Date of Birth",
-        child: [
+export const Data = [
+  {
+      "id": "section_l3031mxnt3qwl0t4p1m",
+      "label": "section 1",
+      "elements": [
           {
-            type: "date",
-            size: 250,
-          },
-        ],
-      },
-      {
-        element: "Data",
-        label: "Gender",
-        child: [
-          {
-            type: "dropdown",
-            values: ["Male", "Female", "Others"],
-            size: 250,
-          },
-        ],
-      },
-      {
-        element: "Data",
-        label: "Marital Status",
-        child: [
-          {
-            type: "dropdown",
-            values: ["Single", "Married"],
-            size: 250,
-          },
-        ],
-      },
-      {
-        element: "Data",
-        label: "Category",
-        child: [
-          {
-            type: "dropdown",
-            values: ["General", "SC", "ST", "OBC"],
-            size: 250,
-          },
-        ],
-      },
-      {
-        element: "Data",
-        label: "Permanent Address",
-        child: [
-          {
-            type: "text",
-            label: "Flat, House, Building",
-            size: 250,
+              "id": "element_l30320ltvx4elcxnqj",
+              "type": "Single Field",
+              "label": "xyz",
+              "child": [
+                  {
+                      "id": "child_l3032av3dj2lk3hbwfk",
+                      "type": "text",
+                      "label": "xyz",
+                      "values": []
+                  }
+              ]
           },
           {
-            type: "text",
-            label: "Area, Sector, Village",
-            size: 250,
+              "id": "element_l3032jg87o7spxpa1zb",
+              "type": "Single Field",
+              "label": "abc",
+              "child": [
+                  {
+                      "id": "child_l3032ol70cktbn9kf9ll",
+                      "type": "date",
+                      "label": "abc",
+                      "values": []
+                  }
+              ]
           },
           {
-            type: "number",
-            label: "pincode",
-            size: 150,
+              "id": "element_l3032uuo3j3ed1qdzeq",
+              "type": "Single Field",
+              "label": "pqr",
+              "child": [
+                  {
+                      "id": "child_l3032zkflpb68b5z2x",
+                      "type": "dropdown",
+                      "label": "pqr",
+                      "values": [
+                          "pq",
+                          "pr",
+                          "sd"
+                      ]
+                  }
+              ]
           },
           {
-            type: "text",
-            label: "city",
-            size: 250,
-          },
-          {
-            type: "dropdown",
-            label: "state",
-            values: ["West Bengal", "UP"],
-            size: 200,
-          },
-        ],
-      },
-    ],
+              "id": "element_l303ce3m8ul21h06cy8",
+              "type": "Single Field",
+              "label": "zz",
+              "child": [
+                  {
+                      "id": "child_l303crkox6beiyq3rxe",
+                      "type": "text",
+                      "label": "22",
+                      "values": []
+                  },
+                  {
+                      "id": "child_l303cwnl2rc6tdvpz7h",
+                      "type": "text",
+                      "label": "33",
+                      "values": []
+                  }
+              ]
+          }
+      ]
   },
   {
-    label: "Employment Details",
-    elements: [
-      {
-        element: "Group",
-        label: "Present Employment",
-        elements: [ 
+      "id": "section_l303arkho0z6r3wyh6p",
+      "label": "section 2",
+      "elements": [
           {
-            element: "Data",
-            label: "Designation",
-            child: [ 
-              {
-                type: "text",
-                label: "",
-                size: 250
-              }
-            ]
-          },
-          {
-            element: "Data",
-            label: "Organisation",
-            child: [ 
-              {
-                type: "text",
-                label: "",
-                size: 250
-              }
-            ]
-          },
-          {
-            element: "Data",
-            label: "Date of Joining",
-            child: [ 
-              {
-                type: "date",
-                label: "",
-                size: 250
-              }
-            ]
-          },
-          {
-            element: "Data",
-            label: "Scale of Pay",
-            child: [ 
-              {
-                type: "number",
-                label: "",
-                size: 250
-              }
-            ]
-          },
-          {
-            element: "Data",
-            label: "Basic Pay",
-            child: [ 
-              {
-                type: "text",
-                label: "",
-                size: 250
-              }
-            ]
-          },
-          {
-            element: "Data",
-            label: "Total Emoluments",
-            child: [ 
-              {
-                type: "text",
-                label: "",
-                size: 250
-              }
-            ]
+              "id": "element_l303b9aeyuqm4o9j0bi",
+              "type": "Group Field",
+              "label": "main",
+              "element": [
+                  {
+                      "id": "groupelement_l303bdx8orvygw3p5r",
+                      "type": "Single Field",
+                      "label": "11",
+                      "child": [
+                          {
+                              "id": "child_l303bi7l6jqvfwdj69f",
+                              "type": "text",
+                              "label": "11",
+                              "values": []
+                          }
+                      ]
+                  },
+                  {
+                      "id": "groupelement_l303bmzuo8g437nd85q",
+                      "type": "Single Field",
+                      "label": "22",
+                      "child": [
+                          {
+                              "id": "child_l303bso0kvh2c9bidjc",
+                              "type": "dropdown",
+                              "label": "22",
+                              "values": [
+                                  "1",
+                                  "2"
+                              ]
+                          }
+                      ]
+                  },
+                  {
+                      "id": "groupelement_l303c1apmhmlv5jp2ab",
+                      "type": "Single Field",
+                      "label": "33",
+                      "child": [
+                          {
+                              "id": "child_l303c50c9dsbf4vety",
+                              "type": "date",
+                              "label": "33",
+                              "values": []
+                          }
+                      ]
+                  },
+                  {
+                      "id": "groupelement_l303d15ueos2lad4uvr",
+                      "type": "Single Field",
+                      "label": "we",
+                      "child": [
+                          {
+                              "id": "child_l303d99nixajnk2u7v8",
+                              "type": "text",
+                              "label": "w",
+                              "values": []
+                          },
+                          {
+                              "id": "child_l303df1ck5qcpjucxia",
+                              "type": "dropdown",
+                              "label": "e",
+                              "values": [
+                                  "1",
+                                  "2"
+                              ]
+                          }
+                      ]
+                  }
+              ]
           }
-        ]
-      }
-
-
-      
-    ]
+      ]
   }
-];
+]

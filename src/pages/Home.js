@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -88,6 +89,14 @@ const useStyles = makeStyles((theme) => ({
 function Home() {
   const classes = useStyles();
   const [showLogin , setShowLogin] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/portal");
+    }
+    //eslint-disable-next-line
+  }, []);
   return (
     <div>
       <Grid

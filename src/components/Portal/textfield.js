@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 15,
     fontWeight: 400,
     marginTop: 18,
+    marginLeft : 10
   },
   label: {
     fontWeight: 600,
